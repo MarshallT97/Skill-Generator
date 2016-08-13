@@ -25,10 +25,10 @@ class Skills:
         print(('Level Reqirement: ' + str(self.available)))
         print()
 
-def list_remover(lists):
+def name_remover(names):
     ''' Returns and remove a random skill name from array of skills '''
-    name = random.choice(lists)
-    lists.remove(name)
+    name = random.choice(name)
+    names.remove(name)
     return name
 
 def display_status(class_name):
@@ -54,7 +54,11 @@ def random_skills():
         num = len(skill_names)
         
     for x in range(int(num)):
-        skill = Skills(list_remover(skill_names),random.randrange(100,300),random.randrange(1,100),random.randrange(1,50))
+        name = name_remover(skill_name)
+        damage = random.randrange(100,300)
+        mana = random.randrange(1,100)
+        level = random.randrange(1,50)
+        skill = Skills(name,damage,mana,level)
         display_status(skill)
  
 random_skills()
